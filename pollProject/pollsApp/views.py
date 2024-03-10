@@ -19,6 +19,7 @@ def create(request):
             return redirect('home')
     else:
         form=CreateForm()
+
     context = {
         'form':form
     }
@@ -46,5 +47,8 @@ def vote(request, poll_id):
 
 
 def results(request, poll_id):
-    context = {}
+    poll = Poll.objects.get(pk=poll_id)
+    context = {
+        'poll' : poll
+    }
     return render(request, 'poll/results.html', context)
