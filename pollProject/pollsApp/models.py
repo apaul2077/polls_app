@@ -8,6 +8,10 @@ class Poll(models.Model):
     firstOptionCount = models.IntegerField(default = 0)
     secondOptionCount = models.IntegerField(default = 0)
     thirdOptionCount = models.IntegerField(default = 0)
+    listOfOptions = []
 
     def total(self):
         return self.firstOptionCount + self.secondOptionCount + self.thirdOptionCount
+    
+    def makeOption(self):
+        self.listOfOptions.apppend(models.CharField(max_length = 30))

@@ -5,3 +5,4 @@ class CreateForm(ModelForm):
     class Meta:
         model = Poll
         fields = ['question', 'firstOption', 'secondOption', 'thirdOption']
+   
